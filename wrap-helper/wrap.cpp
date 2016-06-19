@@ -379,8 +379,8 @@ static bool idaapi ct_vftable_dblclick(TCustomControl *v, int shift, void *ud)
 }
 
 char simplebuffer_addr[16];
-char simplebuffer_name[128];
-char simplebuffer_all[256];
+char simplebuffer_name[1024];
+char simplebuffer_all[2048];
 void vftable_form_init()
 {
 	if (getTableCount()>0)

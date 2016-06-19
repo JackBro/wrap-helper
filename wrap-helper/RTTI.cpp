@@ -467,7 +467,7 @@ BOOL RTTI::type_info::isTypeName(ea_t name)
         if (readIdaString(name, buffer, SIZESTR(buffer)))
         {
             // Should be valid if it properly demangles
-            if (LPSTR s = __unDName(NULL, buffer+1 /*skip the '.'*/, 0, (void *(__cdecl *)(size_t))malloc, free, (UNDNAME_32_BIT_DECODE | UNDNAME_TYPE_ONLY)))
+            if (LPSTR s = __unDName(NULL, buffer+1 /*skip the '.'*/, 0, malloc, free, (UNDNAME_32_BIT_DECODE | UNDNAME_TYPE_ONLY)))
             {
                 free(s);
                 return(TRUE);
